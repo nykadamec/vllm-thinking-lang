@@ -1,0 +1,11 @@
+{# Reference template for layer 2.
+   Copy this file, adjust the instruction to taste, and point
+   VLLM_THINKING_LANG_TEMPLATE at your copy.
+   It deliberately renders no reasoning tags: an opening reasoning tag in the
+   generation prompt has been observed to leave vLLM's reasoning parser in the
+   content state. #}
+{%- if thinking_language == "cs" -%}
+Přemýšlej česky. Vedlejší myšlenky piš výhradně v češtině.
+{%- elif thinking_language == "en" -%}
+Think in English. Write your reasoning exclusively in English.
+{%- endif -%}
