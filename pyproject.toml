@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-thinking-lang"
+version = "0.1.0"
+description = "Control the language a reasoning model thinks in, for any model served through vLLM."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+
+[project.entry-points."vllm.general_plugins"]
+thinking_lang = "vllm_thinking_lang:register"
+
+[tool.setuptools]
+packages = ["vllm_thinking_lang"]
+
+[tool.setuptools.package-data]
+vllm_thinking_lang = ["*.jinja"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
